@@ -1,0 +1,31 @@
+syntax = "proto3";
+
+option go_package = "github.com/bmoffatt/protobuf-gateway-example/pb";
+
+service Gateway {
+    rpc DoTheThing(GatewayRequest) returns (GatewayResponse) {}
+}
+
+service Application {
+    rpc TheThing(ApplicationRequest) returns (GatewayResponse) {}
+}
+
+message Stuff {
+  string name = 1;
+  string hobby = 2;
+  int32 age = 3;
+}
+
+message GatewayRequest {
+  string id = 1;
+  Stuff stuff = 2;
+}
+
+message GatewayResponse {
+  string msg = 1;
+}
+
+message ApplicationRequest {
+  string id = 1;
+  Stuff stuff = 2;
+}
