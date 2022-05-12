@@ -29,3 +29,7 @@ message ApplicationRequest {
   string id = 1;
   Stuff stuff = 2;
 }
+
+message AnError {
+  string yolo = 1;
+}
